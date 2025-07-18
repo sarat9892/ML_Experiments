@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Projects/MLOps/simple_ML_deployment/mlruns/850700370303390781/ceeb74d871c445118f8c4a473b4d2e6f/artifacts
+end_time: 1752835353459
+entry_point_name: ''
+experiment_id: '850700370303390781'
+lifecycle_stage: active
+run_id: ceeb74d871c445118f8c4a473b4d2e6f
+run_name: legendary-lamb-276
+run_uuid: ceeb74d871c445118f8c4a473b4d2e6f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1752835348054
+status: 3
+tags: []
+user_id: SaratKarasala

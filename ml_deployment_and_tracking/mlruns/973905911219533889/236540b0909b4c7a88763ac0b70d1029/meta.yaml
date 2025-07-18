@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Projects/MLOps/simple_ML_deployment/mlruns/973905911219533889/236540b0909b4c7a88763ac0b70d1029/artifacts
+end_time: 1752835174380
+entry_point_name: ''
+experiment_id: '973905911219533889'
+lifecycle_stage: active
+run_id: 236540b0909b4c7a88763ac0b70d1029
+run_name: bedecked-auk-721
+run_uuid: 236540b0909b4c7a88763ac0b70d1029
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1752835168960
+status: 3
+tags: []
+user_id: SaratKarasala

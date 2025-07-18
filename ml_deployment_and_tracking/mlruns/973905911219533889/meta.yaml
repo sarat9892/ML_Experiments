@@ -1,0 +1,6 @@
+artifact_location: file:///D:/Projects/MLOps/simple_ML_deployment/mlruns/973905911219533889
+creation_time: 1752835168404
+experiment_id: '973905911219533889'
+last_update_time: 1752835168404
+lifecycle_stage: active
+name: LinearRegression_2
