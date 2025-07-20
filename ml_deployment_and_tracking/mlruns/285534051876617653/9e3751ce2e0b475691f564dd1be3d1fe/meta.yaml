@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Projects/MLOps/simple_ML_deployment/mlruns/285534051876617653/9e3751ce2e0b475691f564dd1be3d1fe/artifacts
+end_time: 1752981158849
+entry_point_name: ''
+experiment_id: '285534051876617653'
+lifecycle_stage: active
+run_id: 9e3751ce2e0b475691f564dd1be3d1fe
+run_name: LinReg_20250720_084224
+run_uuid: 9e3751ce2e0b475691f564dd1be3d1fe
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1752981146114
+status: 3
+tags: []
+user_id: SaratKarasala
