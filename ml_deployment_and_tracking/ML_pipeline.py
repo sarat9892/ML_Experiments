@@ -52,7 +52,8 @@ def create_pipeline():
     return make_pipeline(preprocessor, LinearRegression())
 
 def training_run(x_train, x_test, y_train, y_test):
-    mlflow.set_experiment(f"LinearRegression_Expt_2")
+    mlflow.set_experiment(f"LinearRegression_Expt_3")
+    model_name = "LinRegress_API_Test"
 
     with mlflow.start_run(run_name=f"LinReg_{datetime.now().strftime("%Y%m%d_%H%M%S")}"):
         pipe = create_pipeline()
@@ -68,22 +69,24 @@ def training_run(x_train, x_test, y_train, y_test):
         mlflow.log_metric("RMSE", rmse)
 
         # signature = infer_signature(x_train, y_hat)
-        mlflow.sklearn.log_model(pipe, "model", input_example=x_train, registered_model_name="LinRegress_Test")
+        mlflow.sklearn.log_model(pipe, "model", input_example=x_train, registered_model_name=model_name)
 
         output = f"Run complete: R2={r_squared:.4f}, MAE={mae:.4f}, RMSE={rmse:.4f}"
 
         print(output)
 
-def load_model():
-    ...
+        return model_name
+
+def load_model(model_uri):
+    return mlflow.sklearn.load_model(model_uri)
 
 def inference(x_new):
-    model_name = "LinRegress_Test"
+    model_name = "LinRegress_API_Test"
     model_version = "latest"
 
     # Load the model from the Model Registry
     model_uri = f"models:/{model_name}/{model_version}"
-    model = mlflow.sklearn.load_model(model_uri)
+    model = load_model(model_uri)
 
     # Generate a new dataset for prediction and predict
     y_hat_new = model.predict(x_new)
@@ -104,13 +107,11 @@ def train_handler(data_file):
 
     x_train, x_test, y_train, y_test = split_data(x, y, 0.25)
 
-    training_run(x_train, x_test, y_train, y_test)
+    return training_run(x_train, x_test, y_train, y_test)
 
 def inference_handler(event):
 
     pred = inference(event)
-
-    print(f"Predictions: {pred}")
 
     return pred
 

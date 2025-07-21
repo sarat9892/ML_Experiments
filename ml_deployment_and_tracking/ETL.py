@@ -28,10 +28,14 @@ def load(red_df, white_df, wine):
     white_df.to_csv("data/processed/white.csv", index=False)
     wine.to_csv("data/processed/wine.csv", index=False)
 
+    return "data/processed/wine.csv"
+
 def handler(data_files):
     red_wine, white_wine = extract(data_files)
     red_t, white_t, wine_t = transform(red_wine, white_wine)
-    load(red_t, white_t, wine_t)
+    processed_file = load(red_t, white_t, wine_t)
+
+    return processed_file
 
 
 if __name__ == "__main__":
@@ -44,4 +48,4 @@ if __name__ == "__main__":
                         help="Dictionary of data file paths")
     args = parser.parse_args()
 
-    handler(args.inputs)
+    _ = handler(args.inputs)
