@@ -1,4 +1,6 @@
+import argparse
 import pandas as pd
+
 
 def extract(input_files):
     red = pd.read_csv(input_files["red_wine"], sep=";")
@@ -26,12 +28,20 @@ def load(red_df, white_df, wine):
     white_df.to_csv("data/processed/white.csv", index=False)
     wine.to_csv("data/processed/wine.csv", index=False)
 
-
-if __name__ == "__main__":
-
-    input_paths = {"red_wine": "D:/Projects/Datasets/data/wine_quality/winequality-red.csv",
-                   "white_wine": "D:/Projects/Datasets/data/wine_quality/winequality-white.csv"}
-
-    red_wine, white_wine = extract(input_paths)
+def handler(data_files):
+    red_wine, white_wine = extract(data_files)
     red_t, white_t, wine_t = transform(red_wine, white_wine)
     load(red_t, white_t, wine_t)
+
+
+if __name__ == "__main__":
+    input_paths = {"red_wine": "data/input/winequality-red.csv",
+                   "white_wine": "data/input/winequality-white.csv"}
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--inputs", "-i",
+                        default=input_paths,
+                        help="Dictionary of data file paths")
+    args = parser.parse_args()
+
+    handler(args.inputs)
