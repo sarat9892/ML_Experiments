@@ -1,0 +1,18 @@
+{
+
+"source": "D:/Projects/Datasets/data/vehicle_sales/car_prices.csv",
+"files": [""],
+
+"raw": "data/lake",
+"warehouse": "data/warehouse",
+"store": "data/store",
+
+"metadata":
+{
+"nominal":["make", "model", "trim", "body", "transmission", "vin", "state", "color", "interior", "seller"],
+"numerical":["year", "condition", "odometer", "mmr"],
+"date":["saledate"],
+"target":["sellingprice"]
+}
+
+}
