@@ -1,0 +1,48 @@
+{
+   "source":"C:/Users/Public/Work/Projects/Datasets/data/vehicle_sales/car_prices.csv",
+   "raw":"data/lake",
+   "warehouse":"data/warehouse",
+   "store":"data/store",
+
+   "metadata":{
+      "nominal":[
+         "make",
+         "model",
+         "trim",
+         "body",
+         "transmission",
+         "vin",
+         "state",
+         "color",
+         "interior",
+         "seller"
+      ],
+      "numerical":[
+         "year",
+         "condition",
+         "odometer",
+         "mmr"
+      ],
+      "date":[
+         "saledate"
+      ],
+      "target":[
+         "sellingprice"
+      ]
+   },
+
+   "training":{
+      "expt_name":"Linear_Regression",
+      "reg_model_name":"LR_Test_1",
+      "model_name":"SimpleLinearRegression",
+      "metadata":{
+         "model":"Linear Regression"
+      },
+      "parameters":{
+         "poly_degree":0,
+         "onehot_encoding_min_freq":30,
+         "numerical_preproc":"standard scaler",
+         "categorical_preproc":"one hot encoding"
+      }
+   }
+}
